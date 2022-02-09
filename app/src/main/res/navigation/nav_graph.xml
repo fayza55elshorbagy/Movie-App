@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination = "@id/homeFragment"
+    >
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.movieapp.ui.homeScreen.HomeScreenFragment"
+        android:label="HomeScreenFragment"
+        tools:layout =  "@layout/fragment_home_screen">
+        <action android:id="@+id/toMovieDetails" app:destination="@id/detailsFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.movieapp.ui.searchScreen.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout = "@layout/search_fragment" >
+        <action android:id="@+id/toMovieDetails" app:destination="@id/detailsFragment"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.movieapp.ui.movieDetailsScreen.MovieDetailsFragment"
+        android:label="MovieDetailsFragment"
+        tools:layout = "@layout/fragment_movie_details" >
+
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
